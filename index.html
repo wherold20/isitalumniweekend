@@ -1,1 +1,43 @@
-Not quite...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Is It Alumni Weekend?</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+      font-size: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="message">Checking...</div>
+
+  <script>
+    const messageEl = document.getElementById('message');
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth(); // May is 4
+    const day = today.getDate();
+
+    let message = 'No';
+
+    if (year === 2025 && month === 4) {
+      if (day >= 9 && day <= 11) {
+        message = 'Yes';
+      } else if (day === 8) {
+        message = 'Almost...';
+      }
+    }
+
+    messageEl.textContent = message;
+  </script>
+</body>
+</html>
